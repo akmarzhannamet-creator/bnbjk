@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <title>Tirkelu</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #f2f2f2;
+    }
+
+    .container {
+      background: #fff;
+      padding: 25px;
+      width: 300px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 12px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #43a047;
+    }
+
+    #message {
+      margin-top: 10px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .back-btn {
+      margin-top: 8px;
+      background: #ddd;
+      color: #000;
+    }
+
+    .back-btn:hover {
+      background: #bbb;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Tirkelu</h2>
+
+    <form id="registerForm">
+      <input type="text" id="username" placeholder="Paydalanushy aty" required>
+      <input type="email" id="email" placeholder="Elektrondyk poshta" required>
+      <input type="password" id="password" placeholder="Qupia soz" required>
+      <input type="password" id="confirm" placeholder="Qupia sozdі qaıtalaý" required>
+
+      <button type="submit">Tirkelu</button>
+      <button type="button" class="back-btn" onclick="goHome()">Artqa</button>
+      <p id="message"></p>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById("registerForm");
+    const message = document.getElementById("message");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const password = document.getElementById("password").value;
+      const confirm = document.getElementById("confirm").value;
+
+      if (password !== confirm) {
+        message.style.color = "red";
+        message.textContent = "Qupia sozder saýkes emes ❌";
+        return;
+      }
+
+      message.style.color = "green";
+      message.textContent = "Tirkelu satti ótі ❌";
+
+      form.reset();
+    });
+
+    function goHome() {
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>

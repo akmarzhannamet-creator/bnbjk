@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<title>Heke damu · Психологиялық қолдау</title>
+
+<style>
+html { scroll-behavior: smooth; }
+* { margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif; }
+
+body {
+  min-height:100vh;
+  background: radial-gradient(circle at center, #0f2a18 0%, #060809 40%, #050607 100%);
+  color:white;
+}
+
+/* ===== HEADER ===== */
+header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:30px 80px;
+}
+header .logo {
+  color:#00ff88;
+  font-weight:700;
+  font-size:38px;
+}
+nav a{
+color:#cfd3d8;
+margin:0 14px;
+text-decoration:none;
+}
+
+nav a.active{
+color:#1cff5d;
+border-bottom:2px solid #1cff5d;
+padding-bottom:4px;
+}
+
+/* ===== HERO ===== */
+.hero {
+  text-align:center;
+  margin-top:100px;
+}
+.hero h1 {
+  font-size:48px;
+  margin-bottom:14px;
+}
+.hero h1 span {
+  color:#1cff5d;
+  text-shadow:0 0 25px rgba(28,255,93,0.8);
+}
+.hero p {
+  max-width:700px;
+  margin:20px auto 50px;
+  color:#b7bcc2;
+  font-size:18px;
+  line-height:1.5;
+}
+
+/* ===== CARDS ===== */
+.grid {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(260px,1fr));
+  gap:40px;
+  max-width:900px;
+  margin:0 auto 80px;
+}
+
+.card {
+  position:relative;
+  background:#0b0f14;
+  border:1px solid #00ff88;
+  border-radius:14px;
+  padding:18px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  transition:all 0.25s ease;
+}
+
+.card:hover {
+  box-shadow:0 0 15px rgba(34,197,94,0.4);
+  transform:translateY(-4px);
+}
+
+.card h3 {
+  font-size:17px;
+  margin-bottom:8px;
+  color:#e5e7eb;
+}
+
+.card p {
+  font-size:14px;
+  color:#b7bcc2;
+  line-height:1.5;
+}
+
+/* ⭐ */
+.fav {
+  position:absolute;
+  top:10px;
+  right:14px;
+  cursor:pointer;
+  opacity:0.4;
+}
+.fav.active {
+  opacity:1;
+  color:gold;
+}
+
+.footer {
+  background: #0b0f14;
+  color: #aaa;
+  padding: 40px 60px;
+  font-size: 14px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #00ff88;
+  font-weight: 600;
+}
+
+.icon {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #00ff88;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-line {
+  border-top: 1px solid #1a1f2b;
+  margin: 30px 0;
+}
+
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.footer-links h4 {
+  color: #00ff88;
+  margin-bottom: 10px;
+  font-size: 13px;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.footer-links a:hover {
+  color: #00ff88;
+}
+
+.footer-links p {
+  color: #aaa;
+}
+.copyright {
+  text-align: center;
+  margin-top: 40px;
+  color: #666;
+  font-size: 13px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">Saual</div>
+  <nav>
+  <a href="index.html">Basty bet</a>
+  <a class="active" href="#bolimler">Bolimder</a>
+</nav>
+</header>
+
+<section class="hero">
+  <h1>Психологиялық <span>қолдау</span><br>және <span>ішкі күш</span></h1>
+  <p>
+    Жазу — сенің жаныңның дауысы. Егер қазір ол бәсең естілсе,  
+    бұл сенің әлсіздігің емес, дем алуға мұқтаж екеніңнің белгісі.
+  </p>
+</section>
+
+<section class="grid" id="support">
+
+  <div class="card">
+    <div class="fav">⭐</div>
+    <h3>Сенің күйің — қалыпты</h3>
+    <p>
+      Көп жазушылар жолдың ортасында тоқтап қалғандай сезінеді.
+      Бұл — шын мәнінде, өсудің тынысы. Әр роман күмәнмен бірге туады.
+    </p>
+  </div>
+
+  <div class="card">
+    <div class="fav">⭐</div>
+    <h3>Қорқыныш — белгі</h3>
+    <p>
+      «Аяқтай алмаймын ба?» деген ой — бұл сенің жобаңа шын мәнінде
+      мән беретіндігіңнің дәлелі. Бейжай адам қорықпайды.
+    </p>
+  </div>
+
+  <div class="card">
+    <div class="fav">⭐</div>
+    <h3>Кішкентай қадам</h3>
+    <p>
+      Бүгін роман емес — бір абзац жаз. Ертең — тағы біреу.
+      Үлкен кітаптар да кішкентай сөйлемдерден басталады.
+    </p>
+  </div>
+
+  <div class="card">
+    <div class="fav">⭐</div>
+    <h3>Өмірлік теңеу</h3>
+    <p>
+      Роман — бұл орман секілді. Барлығын бірден көру міндет емес.
+      Алдыңдағы бір ағашты жазсаң — жол өзінен-өзі ашылады.
+    </p>
+  </div>
+
+  <div class="card">
+    <div class="fav">⭐</div>
+    <h3>Аффирмация</h3>
+    <p>
+      «Мен өз тарихымды аяқтауға лайықпын.  
+      Менің сөздерімнің уақыты келеді.»
+    </p>
+  </div>
+
+  <div class="card">
+    <div class="fav">⭐</div>
+    <h3>Еске салу</h3>
+    <p>
+      Сен бұл романға ғашық болып бастадың.  
+      Ол сенен мінсіздікті емес, шынайылықты күтеді.
+    </p>
+  </div>
+
+</section>
+
+<footer class="footer">
+
+  <div class="footer-top">
+    <div class="brand">
+      <div class="icon">💬</div>
+      <span>Prompttar kolleksiyasy</span>
+    </div>
+    <div class="made">
+      	Built with ❤️ & AI | ❤️ pen AI kömegimen
+    </div>
+  </div>
+
+  <div class="footer-line"></div>
+
+  <div class="footer-links">
+    <div>
+      <h4>JOBA</h4>
+      <a href="#">GitHub repozi̇tori̇i̇</a>
+      <p>⭐ 6 juldız &nbsp;&nbsp; 🍴 0 fork</p>
+    </div>
+
+    <div>
+      <h4>ÄLEUMETTİK JELİLER</h4>
+      <a href="#">X jelisinde jazylu</a>
+    </div>
+
+    <div>
+      <h4>LİCENZİIA</h4>
+      <p>
+        MIT licenziiasy — jeke jäne kommerciialyq maqsatta tegin qoldanylady.
+        <a href="#">Tolyǵyraq →</a>
+      </p>
+    </div>
+  </div>
+
+  <div class="copyright">
+    © 2024 Prompttar Toplamasy. Barlyq quqyqtar qorǵalǵan. | AI kömegimen jasaldy
+  </div>
+
+</footer>
+
+<script>
+document.querySelectorAll(".fav").forEach((star,i)=>{
+  const key = "fav_"+i;
+  if(localStorage.getItem(key)) star.classList.add("active");
+  star.addEventListener("click", e=>{
+    e.stopPropagation();
+    star.classList.toggle("active");
+    if(star.classList.contains("active")) localStorage.setItem(key,true);
+    else localStorage.removeItem(key);
+  });
+});
+</script>
+
+</body>
+</html>

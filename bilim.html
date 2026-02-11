@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8" />
+<title>Bilim · AI Oqu Platformasy</title>
+
+<style>
+html { scroll-behavior: smooth; }
+* { margin:0; padding:0; box-sizing:border-box; font-family:Arial,sans-serif; }
+
+body{
+min-height:100vh;
+background:radial-gradient(circle at center,#0f2a18 0%,#060809 40%,#050607 100%);
+color:white;
+}
+
+/* HEADER */
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:30px 80px;
+}
+
+.logo{
+color:#1cff5d;
+font-size:38px;
+font-weight:700;
+}
+
+nav a{
+color:#cfd3d8;
+margin:0 14px;
+text-decoration:none;
+}
+
+nav a.active{
+color:#1cff5d;
+border-bottom:2px solid #1cff5d;
+padding-bottom:4px;
+}
+
+.btn-outline{
+border:2px solid #1cff5d;
+color:#1cff5d;
+padding:10px 20px;
+border-radius:14px;
+text-decoration:none;
+font-weight:bold;
+}
+
+/* HERO */
+.hero{
+text-align:center;
+margin-top:110px;
+}
+
+.hero h1{
+font-size:62px;
+line-height:1.2;
+}
+
+.hero span{
+color:#1cff5d;
+text-shadow:0 0 25px rgba(28,255,93,.7);
+}
+
+.hero p{
+max-width:680px;
+margin:25px auto 40px;
+color:#b7bcc2;
+font-size:18px;
+}
+
+.search-box{
+width:520px;
+margin:0 auto 50px;
+}
+
+.search-box input{
+width:100%;
+padding:18px 20px;
+background:transparent;
+border:2px solid #1cff5d;
+border-radius:16px;
+color:white;
+font-size:16px;
+outline:none;
+box-shadow:0 0 30px rgba(28,255,93,.25);
+}
+
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(3,minmax(260px,1fr));
+gap:40px;
+max-width:900px;
+margin:0 auto 100px;
+}
+
+.card{
+height:130px;
+background:#0b0f14;
+border:1px solid #1cff5d;
+border-radius:14px;
+padding:18px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+transition:.25s;
+position:relative;
+cursor:pointer;
+}
+
+.card:hover{
+transform:translateY(-5px);
+box-shadow:0 0 25px rgba(34,197,94,.4);
+}
+
+.card h3{
+font-size:17px;
+margin-bottom:6px;
+}
+
+.card span{
+font-size:13px;
+color:#9aa0a6;
+}
+
+.fav{
+position:absolute;
+top:10px;
+right:14px;
+cursor:pointer;
+opacity:.4;
+}
+
+.fav.active{
+opacity:1;
+color:gold;
+}
+
+.footer {
+  background: #0b0f14;
+  color: #aaa;
+  padding: 40px 60px;
+  font-size: 14px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #00ff88;
+  font-weight: 600;
+}
+
+.icon {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #00ff88;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-line {
+  border-top: 1px solid #1a1f2b;
+  margin: 30px 0;
+}
+
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.footer-links h4 {
+  color: #00ff88;
+  margin-bottom: 10px;
+  font-size: 13px;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.footer-links a:hover {
+  color: #00ff88;
+}
+
+.footer-links p {
+  color: #aaa;
+}
+.copyright {
+  text-align: center;
+  margin-top: 40px;
+  color: #666;
+  font-size: 13px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">Saual</div>
+<nav>
+  <a href="index.html">Basty bet</a>
+  <a class="active" href="#bolimler">Bolimder</a>
+</nav>
+<a class="btn-outline" href="register.html">Bastau</a>
+</header>
+
+<section class="hero">
+<h1>Bilim men <span>AI</span><br><span>Birge úıren</span></h1>
+<p>
+Jeke oqu jospary, IELTS Task 1, pedagogika jáne logikalyq oılaudy damytu.
+</p>
+
+<div class="search-box">
+<input id="searchInput" placeholder="Bólim nemese taqyryp izdeu..." />
+</div>
+</section>
+
+<section id="bolimler" class="grid">
+
+<div class="card">
+<div class="fav">⭐</div>
+<h3>📅 Oqu jospary</h3>
+<span>6 aılyq jeke damytu jospary</span>
+</div>
+
+<div class="card">
+<div class="fav">⭐</div>
+<h3>📊 IELTS Task 1</h3>
+<span>Grafik, trend, salystyrý</span>
+</div>
+
+<div class="card">
+<div class="fav">⭐</div>
+<h3>📄 Markwhen</h3>
+<span>Oqiǵalar men milestones</span>
+</div>
+
+<div class="card">
+<div class="fav">⭐</div>
+<h3>📘 Sabak jospary</h3>
+<span>60 min pedagogikalyq model</span>
+</div>
+
+<div class="card">
+<div class="fav">⭐</div>
+<h3>🔎 Logikalyq jumbaq</h3>
+<span>Oılaudy damytu</span>
+</div>
+
+</section>
+
+<footer class="footer">
+
+  <div class="footer-top">
+    <div class="brand">
+      <div class="icon">💬</div>
+      <span>Prompttar kolleksiyasy</span>
+    </div>
+    <div class="made">
+      	Built with ❤️ & AI | ❤️ pen AI kömegimen
+    </div>
+  </div>
+
+  <div class="footer-line"></div>
+
+  <div class="footer-links">
+    <div>
+      <h4>JOBA</h4>
+      <a href="#">GitHub repozi̇tori̇i̇</a>
+      <p>⭐ 6 juldız &nbsp;&nbsp; 🍴 0 fork</p>
+    </div>
+
+    <div>
+      <h4>ÄLEUMETTİK JELİLER</h4>
+      <a href="#">X jelisinde jazylu</a>
+    </div>
+
+    <div>
+      <h4>LİCENZİIA</h4>
+      <p>
+        MIT licenziiasy — jeke jäne kommerciialyq maqsatta tegin qoldanylady.
+        <a href="#">Tolyǵyraq →</a>
+      </p>
+    </div>
+  </div>
+
+  <div class="copyright">
+    © 2024 Prompttar Toplamasy. Barlyq quqyqtar qorǵalǵan. | AI kömegimen jasaldy
+  </div>
+
+</footer>
+
+<script>
+/* SEARCH */
+const input=document.getElementById("searchInput");
+const cards=document.querySelectorAll(".card");
+
+input.addEventListener("input",()=>{
+const v=input.value.toLowerCase();
+cards.forEach(c=>{
+c.style.display=c.innerText.toLowerCase().includes(v)?"flex":"none";
+});
+});
+
+/* FAVORITES */
+document.querySelectorAll(".fav").forEach((s,i)=>{
+const k="fav"+i;
+if(localStorage.getItem(k)) s.classList.add("active");
+s.onclick=e=>{
+e.stopPropagation();
+s.classList.toggle("active");
+s.classList.contains("active")?
+localStorage.setItem(k,1):
+localStorage.removeItem(k);
+};
+});
+</script>
+
+</body>
+</html>

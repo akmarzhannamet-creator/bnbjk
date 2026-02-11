@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>The Prompt Collection</title>
+
+  <style>
+    html {
+  scroll-behavior: smooth;
+}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: radial-gradient(circle at center, #0f2a18 0%, #060809 40%, #050607 100%);
+      color: white;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 30px 80px;
+    }
+
+    
+    nav a {
+      color: #cfd3d8;
+      margin: 0 15px;
+      text-decoration: none;
+    }
+
+    nav a.active {
+      color: #1cff5d;
+      border-bottom: 2px solid #1cff5d;
+      padding-bottom: 4px;
+    }
+
+    .btn-outline {
+      border: 2px solid #1cff5d;
+      color: #1cff5d;
+      padding: 10px 20px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      text-align: center;
+      margin-top: 120px;
+    }
+
+    .hero h1 {
+      font-size: 64px;
+      line-height: 1.2;
+    }
+
+    .hero h1 span {
+      color: #1cff5d;
+      text-shadow: 0 0 25px rgba(28, 255, 93, 0.8);
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: 25px auto 40px;
+      color: #b7bcc2;
+      font-size: 18px;
+    }
+
+    /* ===== SEARCH ===== */
+    .search-box {
+      width: 520px;
+      margin: 0 auto 50px;
+      position: relative;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 18px 20px;
+      background: transparent;
+      border: 2px solid #1cff5d;
+      border-radius: 16px;
+      color: white;
+      font-size: 16px;
+      outline: none;
+      box-shadow: 0 0 30px rgba(28, 255, 93, 0.25);
+    }
+
+    /* ===== BUTTONS ===== */
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .btn {
+      padding: 16px 32px;
+      border-radius: 16px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-green {
+      background: #1cff5d;
+      color: black;
+      box-shadow: 0 0 30px rgba(28, 255, 93, 0.7);
+    }
+
+    .btn-dark {
+      background: transparent;
+      color: #1cff5d;
+      border: 2px solid #1cff5d;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 30px;
+    }
+
+    .logo {
+      color: #00ff88;
+      font-weight: 700;
+      font-size: 40px;
+    }
+
+    nav a {
+      color: #aaa;
+      margin: 0 12px;
+      text-decoration: none;
+    }
+
+    nav a.active {
+      color: #00ff88;
+    }
+
+    .btn {
+      background: transparent;
+      border: 1px solid #00ff88;
+      color: #00ff88;
+      padding: 8px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    /* Tags */
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 40px;
+    }
+
+    .tags span {
+      border: 1px solid #333;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 14px;
+      color: #ccc;
+    }
+
+    .tags .green {
+      color: #00ff88;
+      border-color: #00ff88;
+    }
+
+    /* Title */
+    .title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .title h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .title span {
+      color: #00ff88;
+    }
+
+    .footer {
+  background: #0b0f14;
+  color: #aaa;
+  padding: 40px 60px;
+  font-size: 14px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #00ff88;
+  font-weight: 600;
+}
+
+.icon {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #00ff88;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-line {
+  border-top: 1px solid #1a1f2b;
+  margin: 30px 0;
+}
+
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.footer-links h4 {
+  color: #00ff88;
+  margin-bottom: 10px;
+  font-size: 13px;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.footer-links a:hover {
+  color: #00ff88;
+}
+
+.footer-links p {
+  color: #aaa;
+}
+
+.copyright {
+  text-align: center;
+  margin-top: 40px;
+  color: #666;
+  font-size: 13px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(260px, 1fr));
+  gap: 40px;
+  max-width: 900px;   
+  margin: 0 auto;    
+}
+
+
+
+
+   .card {
+  height: 120px; /* бірдей размер */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--card);
+  border: 1px solid #00ff88;
+  border-radius: 14px;
+  padding: 16px 18px;
+  transition: all 0.25s ease;
+  line-height: 20px;
+}
+
+
+.card:hover {
+  border-color: rgb(56, 130, 56);
+  box-shadow:
+    0 0 10px rgba(34, 197, 94, 0.4),
+    0 0 20px rgba(34, 197, 94, 0.25),
+    0 0 40px rgba(34, 197, 94, 0.15);
+  transform: translateY(-4px);
+  
+
+}
+ .card h3 {
+  font-size: 16px;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card span {
+  font-size: 13px;
+  color: var(--muted);
+}
+.card {
+  position: relative;
+}
+
+.fav {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  cursor: pointer;
+  opacity: 0.4;
+  transition: 0.2s;
+}
+
+.fav.active {
+  opacity: 1;
+  color: gold;
+}
+
+
+.hidden {
+  display: none;
+}
+
+
+body.light {
+  background: #f5f5f5;
+  color: #111;
+}
+.hidden { display: none; }
+ .modal {
+  display: none; /* скрыта по умолчанию */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.7);
+
+  justify-content: center;
+  align-items: center;
+
+  z-index: 10000;
+}
+
+.modal.active {
+  display: flex; /* показываем только при active */
+}
+
+.modal-content {
+  background: #0b0f14;
+  color: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  max-width: 450px;
+  width: 90%;
+  position: relative;
+  text-align: center;
+}
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Saual</div>
+
+    <nav>
+      <a href="#" class="active">Bastı bet</a>
+      <a href="#sholu">Sholu</a>
+      <a href="#ozgeshelikter">Özgeshelikter</a>
+    </nav>
+
+    <a href="register.html" class="btn-outline">Bastau</a>
+  </header>
+
+  <section class="hero">
+    <h1>
+      AI-men sóilesuge <span>jol ashatyn</span><br />
+      <span>qaqpa</span>
+    </h1>
+
+    <p>
+      Árbir AI ózara árekettesuge arnalǵan muqıiat tańdalǵan prompttar. Prompt injeneriasynyń ónerin ashyńyz, zertteńiz jáne meńgerıńız.
+    </p>
+
+    <div class="search-box">
+      <input id="searchInput" type="text" placeholder="Prompttardy, tegterdi nemese sanat-tardy izdeu" />
+    </div>
+    <div class="buttons">
+      <button class="btn btn-dark">Kóbirek Bılu</button>
+    </div>
+
+    <div id="infoModal" class="modal">
+  <div class="modal-content">
+    <span id="closeInfoModal" style="position:absolute; top:10px; right:15px; font-size:24px; cursor:pointer;">&times;</span>
+    <h2>Prompt turaly</h2>
+    <p style="margin:20px 0; font-size:16px; line-height:1.5;">
+      Prompt — bul AI-men sóilesuge nemese árekettesuge arnalǵan qısqa, anıq jäne túsinikti komanda nemese suraq.
+    </p>
+    <div style="display:flex; justify-content:center; gap:30px; margin-top:20px; align-items:center;">
+      <div style="display:flex; flex-direction:column; align-items:center;">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" style="width:40px; height:40px;" alt="WhatsApp">
+        <span style="margin-top:5px;">+7 777 123 45 67</span>
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:center;">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" style="width:40px; height:40px;" alt="Instagram">
+        <span style="margin-top:5px;">@random_account123</span>
+      </div>
+    </div>
+  </div>
+</div>
+  </section>
+  <header class="header">
+  <div class="logo">Prompttar kolleksiyasy</div>
+  <nav>
+    <a class="active" href="#">Bastı bet</a>
+    <a href="#sholu">Sholu</a>
+    <a href="#ozgeshelikter">Özgeshelikter</a>
+  </nav>
+  <a href="register.html" class="btn-outline">Bastau</a>
+</header>
+
+
+
+<section class="title" id="sholu">
+  <h1>📁 Sanattar boiynsha sholu</h1>
+  <p><span>102</span> muqıiat tańdalǵan prompttar jınaǵyn qarap shyǵyńyz</p>
+</section>
+
+<main class="grid">
+<div class="card">
+  <div class="fav">⭐</div>
+  <a href="bilim.html" style="text-decoration: none; color:white;">Bilim</a>
+  <span>1 prompt</span>
+  <!-- Рейтинг цифрами -->
+  <div class="rating">3.5</div>
+  <!-- Free / Not Free -->
+  <div class="price-tag" style="color: #00ff00; font-weight: bold;">Free</div>
+</div>
+
+<div class="card">
+  <div class="fav">⭐</div>
+  <a href="damu.html" style="text-decoration: none; color:white;">Jeke Damu</a>
+  <span>9 prompts</span>
+  <div class="rating">4.2</div>
+  <div class="price-tag" style="color: #4684e9; font-weight: bold;">Premium</div>
+</div>
+
+<div class="card">
+  <div class="fav">⭐</div>
+  <a href="eco.html" style="text-decoration: none; color:white;">Eco</a>
+  <span>15 prompts</span>
+  <div class="rating">4.8</div>
+  <div class="price-tag" style="color: #00ff00; font-weight: bold;">Free</div>
+</div>
+
+
+<div class="card">
+  <div class="fav">⭐</div>
+  <a href="damu.html" style="text-decoration: none; color:white;">Jeke Damu</a>
+  <span>9 prompts</span>
+  <div class="rating">4.2</div>
+  <div class="price-tag" style="color: #4684e9; font-weight: bold;">Premium</div>
+</div>
+
+<div class="card">
+  <div class="fav">⭐</div>
+  <a href="eco.html" style="text-decoration: none; color:white;">Eco</a>
+  <span>15 prompts</span>
+  <div class="rating">4.8</div>
+  <div class="price-tag" style="color: #00ff00; font-weight: bold;">Free</div>
+</div>
+
+<div class="card">
+  <div class="fav">⭐</div>
+  <a href="damu.html" style="text-decoration: none; color:white;">Jeke Damu</a>
+  <span>9 prompts</span>
+  <div class="rating">4.2</div>
+  <div class="price-tag" style="color: #4684e9; font-weight: bold;">Premium</div>
+</div>
+
+<div class="card">
+  <div class="fav">⭐</div>
+  <a href="eco.html" style="text-decoration: none; color:white;">Eco</a>
+  <span>15 prompts</span>
+  <div class="rating">4.8</div>
+  <div class="price-tag" style="color: #00ff00; font-weight: bold;">Free</div>
+</div>
+
+<div class="card">
+  <div class="fav">⭐</div>
+  <a href="damu.html" style="text-decoration: none; color:white;">Jeke Damu</a>
+  <span>9 prompts</span>
+  <div class="rating">4.2</div>
+  <div class="price-tag" style="color: #4684e9; font-weight: bold;">Premium</div>
+</div>
+
+<div class="card">
+  <div class="fav">⭐</div>
+  <a href="eco.html" style="text-decoration: none; color:white;">Eco</a>
+  <span>15 prompts</span>
+  <div class="rating">4.8</div>
+  <div class="price-tag" style="color: #00ff00; font-weight: bold;">Free</div>
+</div>
+
+<div class="card">
+  <div class="fav">⭐</div>
+  <a href="damu.html" style="text-decoration: none; color:white;">Jeke Damu</a>
+  <span>9 prompts</span>
+  <div class="rating">4.2</div>
+  <div class="price-tag" style="color: #4684e9; font-weight: bold;">Premium</div>
+</div>
+
+<div class="card">
+  <div class="fav">⭐</div>
+  <a href="eco.html" style="text-decoration: none; color:white;">Eco</a>
+  <span>15 prompts</span>
+  <div class="rating">4.8</div>
+  <div class="price-tag" style="color: #00ff00; font-weight: bold;">Free</div>
+</div>
+
+<div class="card">
+  <div class="fav">⭐</div>
+  <a href="damu.html" style="text-decoration: none; color:white;">Jeke Damu</a>
+  <span>9 prompts</span>
+  <div class="rating">4.2</div>
+  <div class="price-tag" style="color: #4684e9; font-weight: bold;">Premium</div>
+</div>
+
+<div class="card">
+  <div class="fav">⭐</div>
+  <a href="eco.html" style="text-decoration: none; color:white;">Eco</a>
+  <span>15 prompts</span>
+  <div class="rating">4.8</div>
+  <div class="price-tag" style="color: #00ff00; font-weight: bold;">Free</div>
+</div>
+  </main>
+<footer class="footer" id="ozgeshelikter">
+
+  <div class="footer-top">
+    <div class="brand">
+      <div class="icon">💬</div>
+      <span>Prompttar kolleksiyasy</span>
+    </div>
+    <div class="made">
+      	Built with ❤️ & AI | ❤️ pen AI kömegimen
+    </div>
+  </div>
+
+  <div class="footer-line"></div>
+
+  <div class="footer-links">
+    <div>
+      <h4>JOBA</h4>
+      <a href="#">GitHub repozi̇tori̇i̇</a>
+      
+    </div>
+
+    <div>
+      <h4>ÄLEUMETTİK JELİLER</h4>
+      <a href="register.html">X jelisinde jazylu</a>
+    </div>
+
+    <div>
+      <h4>LİCENZİIA</h4>
+      <p>
+        MIT licenziiasy — jeke jäne kommerciialyq maqsatta tegin qoldanylady.
+        <a href="#">Tolyǵyraq →</a>
+      </p>
+    </div>
+  </div>
+
+  <div class="copyright">
+    © 2024 Prompttar Toplamasy. Barlyq quqyqtar qorǵalǵan. | AI kömegimen jasaldy
+  </div>
+
+</footer>
+
+
+<script>
+/* ===== SEARCH ===== */
+const searchInput = document.getElementById("searchInput");
+const cards = document.querySelectorAll(".card");
+
+searchInput.addEventListener("input", () => {
+  const value = searchInput.value.toLowerCase();
+
+  cards.forEach(card => {
+    // Получаем текст ссылки внутри карточки
+    const title = card.querySelector("a").textContent.toLowerCase();
+
+    // Показываем карточку, если совпадает
+    card.style.display = title.includes(value) ? "flex" : "none";
+  });
+});
+
+
+document.querySelectorAll(".fav").forEach((star, i) => {
+  const key = "fav_" + i;
+
+  if (localStorage.getItem(key)) {
+    star.classList.add("active");
+  }
+
+  star.addEventListener("click", e => {
+    e.stopPropagation();
+    star.classList.toggle("active");
+
+    if (star.classList.contains("active")) {
+      localStorage.setItem(key, true);
+    } else {
+      localStorage.removeItem(key);
+    }
+  });
+});
+ const moreBtn = document.querySelector(".btn-dark");
+const infoModal = document.getElementById("infoModal");
+const closeInfoModal = document.getElementById("closeInfoModal");
+
+moreBtn.addEventListener("click", () => {
+  infoModal.classList.add("active"); // открыть модалку
+});
+
+closeInfoModal.addEventListener("click", () => {
+  infoModal.classList.remove("active"); // закрыть
+});
+
+infoModal.addEventListener("click", (e) => {
+  if (e.target === infoModal) {
+    infoModal.classList.remove("active"); // закрыть по клику на фон
+  }
+});
+</script></body>
+</html>
